@@ -1,0 +1,45 @@
+{
+  "name": "streaming-js-parser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "npm run prepare --silent && istanbul cover test.js",
+    "prepare": "babel src -d lib",
+    "lint": "eslint --fix 'src/**/*.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabiosantoscode/streaming-js-parser.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fabiosantoscode/streaming-js-parser/issues"
+  },
+  "homepage": "https://github.com/fabiosantoscode/streaming-js-parser#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^5.9.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "husky": "^1.2.0",
+    "istanbul": "^1.1.0-alpha.1",
+    "tape": "^4.9.1"
+  },
+  "dependencies": {
+    "string-to-stream": "^1.1.1"
+  },
+  "eslintConfig": {
+    "extends": "standard"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint --silent && npm run test --silent"
+    }
+  }
+}
